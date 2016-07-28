@@ -1,0 +1,203 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<taglib xmlns="http://java.sun.com/xml/ns/j2ee"
+xmlns:xsi="http://www.w3g.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee web-jsptaglibrary_2_0.xsd"
+version="2.0">
+	 <tlib-version>1.2</tlib-version>
+	 <jsp-version>1.2</jsp-version>
+	 <short-name>tm</short-name>
+	 <uri></uri>
+	 <description>自定义标签.</description>
+	 
+	 <tag>
+	 	<name>helloWorld</name><!-- 定义标签名 -->
+	 	<tag-class>com.able.tag.TagSupportDemo</tag-class>
+	 	<body-content>empty</body-content> <!-- 定义标签体为空 -->
+	 </tag>
+	 <tag>
+	 	<name>SkipBodyOrEvalBodyIncludeTag</name><!-- 定义标签名 -->
+	 	<tag-class>com.able.tag.SkipBodyOrEvalBodyIncludeTag</tag-class>
+	 	<body-content>scriptless</body-content> <!-- 定义标签体为空 -->
+	 </tag>
+	 <tag>
+	 	<name>SkipPageOrEvalPageTag</name><!-- 定义标签名 -->
+	 	<tag-class>com.able.tag.SkipPageOrEvalPageTag</tag-class>
+	 	<body-content>empty</body-content> <!-- 定义标签体为空 -->
+	 </tag>
+	 <tag>
+	 	<name>DBconnectionTag</name><!-- 定义标签名 -->
+	 	<tag-class>com.able.tag.DBconnectionTag</tag-class>
+	 	<body-content>empty</body-content> <!-- 定义标签体为空 -->
+	 	<attribute>
+	 		<name>driver</name>
+	 		<required>true</required>
+	 		<rtexprvalue>true</rtexprvalue><!-- 可以使用el表达式接收参数 -->
+	 	</attribute>
+	 	<attribute>
+	 		<name>url</name>
+	 		<required>true</required>
+	 		<rtexprvalue>true</rtexprvalue>
+	 	</attribute>
+	 	<attribute>
+	 		<name>username</name>
+	 		<required>true</required>
+	 		<rtexprvalue>true</rtexprvalue>
+	 	</attribute>
+	 	<attribute>
+	 		<name>password</name>
+	 		<required>true</required>
+	 		<rtexprvalue>true</rtexprvalue>
+	 	</attribute>
+	 	<attribute>
+	 		<name>sql</name>
+	 		<required>true</required>
+	 		<rtexprvalue>true</rtexprvalue>
+	 	</attribute>
+	 </tag>
+	 
+	 <tag>
+	 	<name>IteratorTagDemo</name><!-- 定义标签名 -->
+	 	<tag-class>com.able.tag.IteratorTagDemo</tag-class>
+	 	<body-content>scriptless</body-content> <!-- 定义标签体为空 -->
+	 	<attribute>
+	 		<name>var</name>
+	 		<required>true</required>
+	 	</attribute>
+	 	<attribute>
+	 		<name>items</name>
+	 		<required>true</required>
+	 		<rtexprvalue>true</rtexprvalue>
+	 	</attribute>
+	 </tag>
+	 
+	 
+	 
+	 
+	 <tag>
+	 	<name>bodyTag</name><!-- 定义标签名 -->
+	 	<tag-class>com.able.bodyTag.BodyTagSupportTag</tag-class>
+	 	<body-content>scriptless</body-content> <!-- 定义标签体为空 -->
+	 </tag>
+	 
+	 <tag>
+	 	<name>dataInfo</name><!-- 定义标签名 -->
+	 	<tag-class>com.able.simpleTag.DisplyInfo</tag-class>
+	 	<body-content>empty</body-content> <!-- 定义标签体为空 -->
+	 </tag>
+	 
+	 <tag>
+		<name>foreach</name>
+		<tag-class>com.able.tag.ForEachTag</tag-class>
+		<body-content>JSP</body-content>
+
+		<attribute>
+			<name>var</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+		</attribute>
+		<attribute>
+			<name>item</name>
+			<required>true</required>
+			<rtexprvalue>true</rtexprvalue>
+			<!-- <type>java.lang.Object</type> -->
+			 <type>java.util.Collection</type>
+		</attribute>
+	</tag>
+	
+	
+	<tag>
+	 	<name>choose</name>
+	 	<tag-class>com.able.simpleTag.choose.Choose</tag-class>
+	 	<body-content>scriptless</body-content>
+	 </tag>
+	 <tag>
+	 	<name>when</name>
+	 	<tag-class>com.able.simpleTag.choose.When</tag-class>
+	 	<body-content>scriptless</body-content>
+	 	<attribute>
+	 		<name>test</name>
+	 		<required>true</required>
+	 		<rtexprvalue>true</rtexprvalue>
+	 	</attribute>
+	 </tag>
+	  <tag>
+	 	<name>otherwise</name>
+	 	<tag-class>com.able.simpleTag.choose.OtherWise</tag-class>
+	 	<body-content>scriptless</body-content>
+	 </tag>
+	 
+	 <tag>
+	 	<name>referer</name>
+	 	<tag-class>com.able.simpleTag.RefererTag</tag-class>
+	 	<body-content>empty</body-content>
+	 	<attribute>
+	 		<name>site</name>
+	 		<required>true</required>
+	 		<rtexprvalue>true</rtexprvalue>
+	 	</attribute>
+	 	<attribute>
+	 		<name>page</name>
+	 		<required>true</required>
+	 		<rtexprvalue>true</rtexprvalue>
+	 	</attribute>
+	 </tag>
+	 
+	 <tag>
+	 	<name>htmlFilter</name>
+	 	<tag-class>com.able.simpleTag.HtmlFilterTag</tag-class>
+	 	<body-content>scriptless</body-content>
+	 </tag>
+	 
+	  <tag>
+	 	<name>simpleforeach</name>
+	 	<tag-class>com.able.simpleTag.foreach</tag-class>
+	 	<body-content>scriptless</body-content>
+	 	<attribute>
+	 		<name>item</name>
+	 		<required>true</required>
+	 		<rtexprvalue>true</rtexprvalue>
+	 	</attribute>
+	 	<attribute>
+	 		<name>var</name>
+	 		<required>true</required>
+	 		<rtexprvalue>true</rtexprvalue>
+	 	</attribute>
+	 </tag>
+	 <tag>
+	 	<name>simpleforeachAll</name>
+	 	<tag-class>com.able.simpleTag.foreachAll</tag-class>
+	 	<body-content>scriptless</body-content>
+	 	<attribute>
+	 		<name>items</name>
+	 		<required>true</required>
+	 		<rtexprvalue>true</rtexprvalue>
+	 	</attribute>
+	 	<attribute>
+	 		<name>var</name>
+	 		<required>true</required>
+	 		<rtexprvalue>true</rtexprvalue>
+	 	</attribute>
+	 </tag>
+	 
+	 
+	 <tag>
+	 	<name>tagDemo1</name>
+	 	<tag-class>com.able.simpleTag.SimpleTagDemo1</tag-class>
+	 	<body-content>scriptless</body-content>
+	 </tag>
+	 <tag>
+	 	<name>tagDemo2</name>
+	 	<tag-class>com.able.simpleTag.SimpleTagDemo2</tag-class>
+	 	<body-content>scriptless</body-content>
+	 </tag>
+	 <tag>
+	 	<name>tagDemo3</name>
+	 	<tag-class>com.able.simpleTag.SimpleTagDemo3</tag-class>
+	 	<body-content>scriptless</body-content>
+	 </tag>
+	 <tag>
+	 	<name>tagDemo4</name>
+	 	<tag-class>com.able.simpleTag.SimpleTagDemo4</tag-class>
+	 	<body-content>scriptless</body-content>
+	 </tag>
+	</taglib>
